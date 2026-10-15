@@ -56,7 +56,7 @@ async def lifespan(app: FastAPI):
             from app.config import ModelConfig
 
             tokenizer = CharTokenizer.load(str(tok_path))
-            ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
+            ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=True)  # state dict + plain config only; never unpickle code
             config = ModelConfig(**ckpt["config"])
             model = GPTLanguageModel(config)
             model.load_state_dict(ckpt["model_state_dict"])
