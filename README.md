@@ -7,6 +7,7 @@ Tools for looking inside a transformer's attention and checking the maths behind
 ## Features
 
 **Attention analysis**
+
 - **Entropy per head:** how focused or diffuse each head is.
 - **Mean attention distance:** how far back each head looks.
 - **Head similarity:** finds redundant heads.
@@ -14,6 +15,7 @@ Tools for looking inside a transformer's attention and checking the maths behind
 - **Whole-model analysis** across all layers.
 
 **Positional-encoding probes**
+
 - **RoPE relative invariance:** verifies that the query·key score depends only on the distance between positions, not on the absolute positions.
 - **ALiBi slopes:** measures each head's slope and checks it against the geometric formula.
 - **Sinusoidal frequencies:** checks each dimension's frequency against theory.
